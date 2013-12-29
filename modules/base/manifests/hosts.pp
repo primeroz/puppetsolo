@@ -1,16 +1,20 @@
 class base::hosts (
-  $hosts    =   '',
+  $config   = undef,
   $self     = true,
   ) {
 
-  $hosts_default = {
+  $defaults = {
     ensure => 'present',
   }
 
-  #Add entries from HIERA or passed parameters
-  if ($base::hosts::hosts != '') {
-    validate_hash($base::hosts::hosts) 
-    create_resources(host,$base::hosts::hosts,$base::hosts::hosts_default)
+  if $config {
+    validate_hash("$config")
+    create_resources(host,$config,$defaults)
+  }
+
+  $hiera_config = hiera_hash('base::hosts::hosts', undef)
+  if $base::hosts::hosts {
+    create_resources(host,$hiera_config,$defaults)
   }
 
   #Add Entry for host itself
