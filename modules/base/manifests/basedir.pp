@@ -17,7 +17,6 @@ class base::basedir (
   # Pull daya from HIERA as merged hash
   $hiera_config = hiera_hash('base::basedir::basedirs', undef)
   if $hiera_config {
-    validate_hash("$hiera_config")
     create_resources(file,$hiera_config,$defaults)
   }
 
