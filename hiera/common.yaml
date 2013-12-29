@@ -7,3 +7,9 @@ path_real: "/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/b
 
 #Base Module
 base::common::manage_firewall: false
+
+base::basedir::basedirs:
+  '/data/':
+    owner: 'root'
+    group: 'root'
+    mode: '0755'
