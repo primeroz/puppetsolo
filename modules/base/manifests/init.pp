@@ -36,6 +36,7 @@
 # Copyright 2013 Your name here, unless otherwise noted.
 #
 class base (
+  $config = {},
   $manage_firewall = false,
   ) {
 
@@ -45,8 +46,12 @@ class base (
     include "utils"
 
     #include "${osfamily}"
-    include "base::basedir"
-    include "base::hosts"
+    class { "base::basedir": 
+      config => $config['basedir'],
+    }
+    class { "base::hosts": 
+      config => $config['hosts'],
+    }
     #include "base::ntp"
 
     #class { "base::fw": 
