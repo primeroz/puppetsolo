@@ -3,9 +3,9 @@ class base::basedir (
 ) {
 
   $defaults = {
-    ensure => 'directory'
-    owner  => 'root'
-    group  => 'root'
+    ensure => 'directory',
+    owner  => 'root',
+    group  => 'root',
   }
 
   # Create Dirs from config argument hash
