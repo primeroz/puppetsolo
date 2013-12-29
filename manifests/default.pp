@@ -11,12 +11,12 @@ node basenode {
   }
 
 
-  anchor { 'basenode::begin': }
-  anchor { 'basenode::end': }
-
-  Anchor['basenode::begin'] 
-  -> Class['base']
-  -> Anchor['basenode::end']
+  #  anchor { 'basenode::begin': }
+  #  anchor { 'basenode::end': }
+  #
+  #  Anchor['basenode::begin'] 
+  #  -> Class['base']
+  #  -> Anchor['basenode::end']
 
 
 }
