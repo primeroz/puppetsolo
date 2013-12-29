@@ -1,5 +1,5 @@
 class base::basedir (
-  config = undef
+  $config = undef
 ) {
 
   $defaults = {
