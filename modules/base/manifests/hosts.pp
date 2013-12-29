@@ -1,6 +1,6 @@
 class base::hosts (
   $config   = undef,
-  $self     = true,
+  $self     = false,
   ) {
 
   $defaults = {
