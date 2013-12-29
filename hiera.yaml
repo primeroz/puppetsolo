@@ -1,0 +1,16 @@
+---
+:backends:
+  - yaml
+
+:logger: console
+
+:hierarchy:
+  - "node/%{::clientcert}"
+  - "network/%{::network_range}"
+  - "domain/%{::domain}"
+  - "domain/%{::environment}"
+  - "os/%{::osfamily}"
+  - common
+
+:yaml:
+   :datadir: /root/puppetsolo/puppetsolo/hiera
