@@ -42,8 +42,6 @@ class base (
 
     #include "users"
     #include "v_users"
-    include "stdlib"
-    include "utils"
 
     #include "${osfamily}"
     class { "base::basedir": 
