@@ -52,9 +52,9 @@ class base (
     }
     #include "base::ntp"
 
-    #class { "base::fw": 
-    #manage_firewall => $base::manage_firewall,
-    #}
+    class { "base::fw": 
+      manage_firewall => $manage_firewall,
+    }
 
     #include "base::motd"
 
@@ -67,7 +67,7 @@ class base (
 	-> Class['base::basedir'] 
   -> Class['base::hosts'] 
   #-> Class['base::ntp'] 
-  #-> Class['base::fw'] 
+  -> Class['base::fw'] 
   #-> Class['base::motd']
   -> Anchor['base::end']
 }

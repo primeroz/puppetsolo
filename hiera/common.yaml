@@ -4,7 +4,7 @@ permit_root_login : 'yes'
 path_real: "/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin"
 
 #Base Module
-base::common::manage_firewall: false
+base::manage_firewall: true
 
 base::hosts::self: true
 
