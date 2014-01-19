@@ -29,6 +29,8 @@ node default inherits basenode {
 
 node "vps1.pr-z.info" inherits basenode {
 
-  include "r_zol"
+  class { "r_zol":
+    stage => setup,
+  }
 
 }
