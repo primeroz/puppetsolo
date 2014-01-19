@@ -1,0 +1,15 @@
+---
+#ZFS Settings for the host
+zol::resources::zpool:
+  zloop:
+    pooltype: 'raiz'
+    pooldisks:
+      - "/srv/disks/disk1"
+      - "/srv/disks/disk2"
+      - "/srv/disks/disk3"
+    poolforce: true
+
+zol::resources::zfs:
+  fs1:
+    poolname: 'zloop'
+    prop_compression: 'on'
