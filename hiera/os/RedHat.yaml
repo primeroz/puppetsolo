@@ -10,7 +10,7 @@ base::basepkgs::common:
   - tcpdump
   - tmux
   - tree
-  - vim
+  - vim-enhanced
 
 #CLASS: base::motd params
 base::motd::ensure: 'present'
