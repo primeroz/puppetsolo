@@ -2,6 +2,8 @@
 node basenode {
   $config = {} #PLACEHOLDER
 
+  import "roles/*.pp"
+
   include 'stdlib'
   include 'utils'
 
@@ -22,5 +24,11 @@ node basenode {
 }
 
 node default inherits basenode {
+
+}
+
+node vps1.pr-z.info inherits basenode {
+
+  include "r_zol"
 
 }
