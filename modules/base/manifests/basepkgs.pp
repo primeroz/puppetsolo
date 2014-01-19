@@ -3,15 +3,15 @@ class base::basepkgs (
 ) {
 
 
-  $hiera_config_common = hiera_hash('base::basepkgs::common', undef)
+  $hiera_config_common = hiera('base::basepkgs::common', undef)
 
   case $::operatingsystemmajrelease {
     6: { 
-      $hiera_config_release = hiera_hash('base::basepkgs::6', undef)
+      $hiera_config_release = hiera('base::basepkgs::6', undef)
       $epel_vers = "epel-6"
     }
     5: { 
-      $hiera_config_release = hiera_hash('base::basepkgs::5', undef)
+      $hiera_config_release = hiera('base::basepkgs::5', undef)
       $epel_vers = "epel-5"
     }
 
