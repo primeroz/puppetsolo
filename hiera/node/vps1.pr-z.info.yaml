@@ -2,7 +2,7 @@
 #ZFS Settings for the host
 zol::resources::zpool:
   zloop:
-    pooltype: 'raidz'
+    pooltype: 'raidz1'
     pooldisks:
       - "/srv/disks/disk1"
       - "/srv/disks/disk2"
