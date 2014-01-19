@@ -14,7 +14,6 @@ class base::basepkgs (
       $hiera_config_release = hiera('base::basepkgs::5', undef)
       $epel_vers = "epel-5"
     }
-
   }
 
   # Enable EPEL repo my mirrors
@@ -29,12 +28,12 @@ class base::basepkgs (
 
   package { $hiera_config_common:
               ensure  => 'installed',
-              require => Yumerepo['epel']
+              require => Yumrepo['epel']
   }
 
   package { $hiera_config_release:
               ensure  => 'installed',
-              require => Yumerepo['epel']
+              require => Yumrepo['epel']
   }
 
 }
