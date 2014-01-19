@@ -13,7 +13,7 @@ class base::hosts (
   }
 
   $hiera_config = hiera_hash('base::hosts::hosts', undef)
-  if $base::hosts::hosts {
+  if $hiera_config {
     create_resources(host,$hiera_config,$defaults)
   }
 
