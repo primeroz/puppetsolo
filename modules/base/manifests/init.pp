@@ -47,6 +47,8 @@ class base (
     class { "base::basedir": 
       config => $config['basedir'],
     }
+    class { "base::basepkgs": 
+    }
     class { "base::hosts": 
       config => $config['hosts'],
     }
@@ -66,6 +68,7 @@ class base (
     Anchor['base::begin'] 
     #-> Class["${osfamily}"]
 	-> Class['base::basedir'] 
+	-> Class['base::basepkgs'] 
   -> Class['base::hosts'] 
   -> Class['base::ntp'] 
   -> Class['base::fw'] 

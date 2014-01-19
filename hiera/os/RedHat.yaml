@@ -1,0 +1,19 @@
+---
+# Path on RedHat server
+path_real: "/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin"
+
+#CLASS: base::basepkg
+base::basepkgs::6:
+  - yum-plugin-priorities
+
+base::basepkgs::common:
+  - tcpdump
+  - tmux
+  - tree
+  - vim
+
+#CLASS: base::motd params
+base::motd::ensure: 'present'
+base::motd::config_file: '/etc/motd'
+base::motd::template: 'base/motd/motd.base.erb'
+
