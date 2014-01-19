@@ -17,7 +17,22 @@ class base::basepkgs (
 
   }
 
+  # Enable EPEL repo my mirrors
+  yumrepo {
+      "epel":
+          descr          =>   "Epel Repository for CentOS",
+          mirrorlist     =>   "http://mirrors.fedoraproject.org/mirrorlist?repo=${epel_vers}&arch=\$basearch",
+          failovermethod =>   "priority",
+          gpgcheck       =>   "0",
+          enabled        =>   "1";
+  }
+
   package { $hiera_config_common:
+              ensure  => 'installed',
+              require => Yumerepo['epel']
+  }
+
+  package { $hiera_config_release
               ensure  => 'installed',
               require => Yumerepo['epel']
   }
