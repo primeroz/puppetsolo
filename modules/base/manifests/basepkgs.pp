@@ -32,7 +32,7 @@ class base::basepkgs (
               require => Yumerepo['epel']
   }
 
-  package { $hiera_config_release
+  package { $hiera_config_release:
               ensure  => 'installed',
               require => Yumerepo['epel']
   }
