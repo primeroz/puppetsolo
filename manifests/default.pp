@@ -27,7 +27,7 @@ node default inherits basenode {
 
 }
 
-node vps1.pr-z.info inherits basenode {
+node "vps1.pr-z.info" inherits basenode {
 
   include "r_zol"
 
