@@ -30,6 +30,19 @@ class base::ntpparams {
                 '2.centos.pool.ntp.org',
             ]
             }
+     'Debian': {
+            $config_file          = '/etc/ntp.conf'
+            $keys_file       = '/etc/ntp/keys'
+            $drift_file       = '/var/lib/ntp/drift'
+            $package_name    = [ 'ntp' ]
+            $service_name    = 'ntp'
+            $ntp_servers         = [
+                '0.debian.pool.ntp.org iburst',
+                '1.debian.pool.ntp.org iburst',
+                '2.debian.pool.ntp.org iburst',
+                '3.debian.pool.ntp.org iburst',
+            ]
+      }
         default: { fail("The ${module_name} module is not supported on an ${::osfamily} based system.") }
     }
 }
