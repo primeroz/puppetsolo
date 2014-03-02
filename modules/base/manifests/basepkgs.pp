@@ -42,6 +42,11 @@ class base::basepkgs (
 
     } # End Redhat
     'Debian': {
+
+      package { $hiera_config_common:
+                  ensure  => 'installed',
+      }
+
     } # End Debian
 
   }

@@ -1,0 +1,16 @@
+---
+# Path on Debian server
+path_real: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+#CLASS: base::basepkg
+base::basepkgs::common:
+  - tcpdump
+  - tmux
+  - tree
+  - vim
+
+#CLASS: base::motd params
+base::motd::ensure: 'present'
+base::motd::config_file: '/etc/motd'
+base::motd::template: 'base/motd/motd.base.erb'
+
